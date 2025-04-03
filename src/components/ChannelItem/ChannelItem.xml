@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="ChannelItem" extends="Group">
+
+    <interface>
+        <field id="itemContent" type="node" onChange="showContent" />
+    </interface>
+
+
+    <children>
+
+   
+
+    <Poster 
+        id="thumb"
+        translation="[5, 100]"
+        width="250" 
+        height="120" />
+
+    <Label 
+        id="title"
+        translation="[0, 50]"
+        width="260"
+        height="30"
+        horizAlign="center"
+        font="font:MediumBoldSystemFont"
+        color="0xFFFFFFFF" />
+
+    <Rectangle
+        id = "itemcursor"
+        translation = "[0, 180]"
+        width = "260"
+        height = "5"
+        color = "0xEB3333FF"
+        opacity = "0.0" />
+
+
+
+    </children>
+
+    <script type="text/brightscript" uri="pkg:/components/ChannelItem/ChannelItem.brs" />
+
+</component>

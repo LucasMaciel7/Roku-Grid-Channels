@@ -4,40 +4,48 @@
 
     <interface>
         <field id="itemContent" type="node" onChange="showContent" />
+        <field id="focusPercent" type="float" onChange="onFocusChange"/>
+
     </interface>
 
-
     <children>
-
-   
-
-    <Poster 
-        id="thumb"
-        translation="[5, 100]"
-        width="250" 
-        height="120" />
-
-    <Label 
-        id="title"
-        translation="[0, 50]"
-        width="260"
-        height="30"
-        horizAlign="center"
-        font="font:MediumBoldSystemFont"
-        color="0xFFFFFFFF" />
-
-    <Rectangle
-        id = "itemcursor"
-        translation = "[0, 180]"
-        width = "260"
-        height = "5"
-        color = "0xEB3333FF"
-        opacity = "0.0" />
+        <!-- Card com bordas arredondadas -->
+        <Rectangle  
+            id="bg"
+            width="440" 
+            height="80" 
+            color="0x1A1A1FFF" 
+            cornerRadius="12" 
+            translation="[0, 0]"/>
 
 
+        <!-- Logo + nome do canal lado a lado -->
+        <LayoutGroup    
+            id="channelLayout"
+            layoutDirection="horiz" 
+            translation="[20, 40]"
+            vertAlignment="center"
+            horizAlignment="left"
+            centered="true"
+            itemSpacings="[50, 0]">
 
+            <Poster id="thumb" width="60" height="60" loadWidth="60" loadHeight="60 " />
+
+            <!-- Espaço entre logo e texto -->
+
+            <Label
+                    id="title"
+                    width="350"
+                    height="40"
+                    font="font:MediumSystemFont"
+                    color="0xF0F0F0FF"
+                    horizAlign="left"/>
+
+        </LayoutGroup>
+
+        
     </children>
-
+    
     <script type="text/brightscript" uri="pkg:/components/ChannelItem/ChannelItem.brs" />
 
 </component>

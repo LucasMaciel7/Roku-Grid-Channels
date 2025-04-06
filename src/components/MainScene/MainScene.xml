@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <component name="MainScene" extends="Scene">
   <children>
+    <Rectangle
+    id="background"
+    width="1280"
+    height="720"
+    color="0x121214FF" 
+    />  <!-- Fundo visível e opaco -->
 
-    <LayoutGroup id="mainLayout" layoutDirection="horiz"  itemSpacing="60" translation="[60, 20]">
 
-      <!-- Lista de categorias à esquerda -->
-      <MarkupList
-        id="categoryList"
-        itemSize="[300, 60]"
-        numRows="6"
-        drawFocusFeedback="true"
-        itemComponentName="CategoryItem" />
+    <!-- Retângulo à esquerda (com cinza específico) -->
+    <Rectangle
+      id="leftPanel"
+      width="300"
+      height="720"
+      translation="[0, 0]"
+      color="0xFFFF00FF"
+      /> <!-- Cinza escuro desejado -->
 
-      <!-- Grid de canais à direita -->
-            <MarkupGrid
-            id="channelGrid"
-            itemSize="[260, 190]"
-            columnSpacing="40"
-            rowSpacing="20"
-            numColumns="3"
-            numRows= "3"
-            drawFocusFeedback="true"
-            vertFocusAnimationStyle = "floatingFocus"
-            itemComponentName="ChannelItem"
-            translation="[380, 100]" />
-  
+    <!-- Painel da direita com lista -->
+    <Rectangle 
+      id="rightPanel"
+      translation="[800, 0]"
+      width="480"
+      height="720"
+      color="0x1A1A1FFF"> <!-- Transparente, usa o fundo do Scene -->
 
-    </LayoutGroup>
+      <!-- Lista de canais -->
+      <MarkupList 
+        id="ChannelList"
+        itemSize="[440, 100]"
+        numRows="9"
+        translation="[20, 20]"
+        itemComponentName="ChannelItem"
+        drawFocusFeedback="false" />
+    </Rectangle>
 
   </children>
+
   <script type="text/brightscript" uri="pkg:/components/MainScene/MainScene.brs" />
 </component>
